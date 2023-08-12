@@ -24,7 +24,7 @@ mkdir  -p $WORK_DIR
 mkdir -p data/temp
 
 # please change DATA_PATH where you put the training data
-export DATA_PATH='/mnt/lustre/share_data/zhujinguo'
+export DATA_PATH='./'
 
 srun --partition=${partition}  $SRUN_ARGS \
 --job-name=${JOB_NAME} -n$GPUS  --gres=gpu:${GPUS_PER_NODE} \

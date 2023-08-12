@@ -128,6 +128,7 @@ class FusedExperts(torch.nn.Module):
         if indices[0].size(0) == 1:
             x = self.mergelayer(x, indices[0][0], indices[1][0], gates[0][0], gates[1][0], mode=mode)
         elif indices[0].size(0) == 2:
+            # 如果是kv模式，且sample_info中pe_length大于0，则在data1_length后添加prompt embedding
             data1_length = kwargs['sample_info']['data_cum_length'][1]
             if mode == 'kv' and kwargs['sample_info'].get('pe_length', 0) > 0:
                 # may have prompt embedding for kv embedding

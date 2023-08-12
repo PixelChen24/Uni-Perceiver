@@ -136,6 +136,8 @@ output/*
 work_dirs
 work_dirs/*
 work_dirs/
+open_source_dataset
+
 
 data/temp/*
 slurm_tools/
